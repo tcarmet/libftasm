@@ -6,7 +6,7 @@
 /*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/09 20:29:16 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/05/09 20:59:43 by tcarmet          ###   ########.fr       */
+/*   Updated: 2015/05/09 22:48:14 by tcarmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 void	launch_isalnum(int c, int test)
 {
-	if (ft_isalpha(c) == isalpha(c))
+	if (ft_isalnum(c) == isalnum(c))
 		printf("TEST%d OK\n", test);
 	else
 		printf("TEST%d ERROR\n", test);
@@ -30,20 +30,14 @@ void	test_isalnum(void)
 
 	printf("---------- TEST isalnum ------------\n");
 	test = 1;
-	if (ft_isalnum(0) == isalnum(0))
-		printf("TEST%d OK\n", test);
-	else
-		printf("TEST%d ERROR\n", test);
+	launch_isalnum(0, test);
 	test++;
-	if (ft_isalnum('a') == isalnum('a'))
-		printf("TEST%d OK\n", test);
-	else
-		printf("TEST%d ERROR\n", test);
+	launch_isalnum('c', test);
 	test++;
-	if (ft_isalnum(2) == isalnum(2))
-		printf("TEST%d OK\n", test);
-	else
-		printf("TEST%d ERROR\n", test);
+	launch_isalnum(3, test);
+	test++;
+	launch_isalnum('Z', test);
+
 }
 
 void	launch_alpha(int c, int test)
@@ -92,9 +86,107 @@ void	test_isdigit(void)
 	launch_digit('Z', test);	
 }
 
+void	launch_isascii(int c, int test)
+{
+	if (ft_isascii(c) == isascii(c))
+		printf("TEST%d OK\n", test);
+	else
+		printf("TEST%d ERROR\n", test);
+}
+
+void	test_isascii(void)
+{
+	int		test;
+
+	printf("---------- TEST isascii ------------\n");
+	test = 1;
+	launch_isascii(0, test);
+	test++;
+	launch_isascii('c', test);
+	test++;
+	launch_isascii(3, test);
+	test++;
+	launch_isascii('#', test);
+}
+
+void	launch_isprint(int c, int test)
+{
+	if (ft_isprint(c) == isprint(c))
+		printf("TEST%d OK\n", test);
+	else
+		printf("TEST%d ERROR\n", test);
+}
+
+void	test_isprint(void)
+{
+		int		test;
+
+	printf("---------- TEST isprint ------------\n");
+	test = 1;
+	launch_isprint(0, test);
+	test++;
+	launch_isprint('c', test);
+	test++;
+	launch_isprint(3, test);
+	test++;
+	launch_isprint(126, test);
+}
+
+
+void	launch_tolower(int c, int test)
+{
+	if (ft_tolower(c) == tolower(c))
+		printf("TEST%d OK\n", test);
+	else
+		printf("TEST%d ERROR\n", test);
+}
+
+void	test_tolower(void)
+{
+		int		test;
+
+	printf("---------- TEST tolower ------------\n");
+	test = 1;
+	launch_tolower(0, test);
+	test++;
+	launch_tolower('c', test);
+	test++;
+	launch_tolower(3, test);
+	test++;
+	launch_tolower('C', test);
+}
+
+void	launch_toupper(int c, int test)
+{
+	if (ft_toupper(c) == toupper(c))
+		printf("TEST%d OK\n", test);
+	else
+		printf("TEST%d ERROR\n", test);
+}
+
+void	test_toupper(void)
+{
+		int		test;
+
+	printf("---------- TEST toupper ------------\n");
+	test = 1;
+	launch_toupper(0, test);
+	test++;
+	launch_toupper('c', test);
+	test++;
+	launch_toupper(3, test);
+	test++;
+	launch_toupper('C', test);
+}
+
 int		main(void)
 {
 	test_isalnum();
 	test_isalpha();
 	test_isdigit();
+	test_isascii();
+	test_isprint();
+	test_tolower();
+	test_toupper();
+	return (0);
 }
