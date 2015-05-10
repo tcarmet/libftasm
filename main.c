@@ -6,7 +6,7 @@
 /*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/09 20:29:16 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/05/09 22:48:14 by tcarmet          ###   ########.fr       */
+/*   Updated: 2015/05/10 15:09:21 by tcarmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -179,6 +179,29 @@ void	test_toupper(void)
 	launch_toupper('C', test);
 }
 
+void	launch_strlen(char *c, int test)
+{
+	if (ft_strlen(c) == strlen(c))
+		printf("TEST%d OK\n", test);
+	else
+		printf("TEST%d ERROR\n", test);
+}
+
+void	test_strlen(void)
+{
+		int		test;
+
+	printf("---------- TEST strlen ------------\n");
+	test = 1;
+	launch_strlen("toto", test);
+	test++;
+	launch_strlen("totot ma ejqijifjeif", test);
+	test++;
+	launch_strlen("fkebwkfbewkjfbk", test);
+	test++;
+	launch_strlen("dhaksdhkjsahdkajsdj", test);
+}
+
 int		main(void)
 {
 	test_isalnum();
@@ -188,5 +211,6 @@ int		main(void)
 	test_isprint();
 	test_tolower();
 	test_toupper();
+	test_strlen();
 	return (0);
 }

@@ -13,7 +13,7 @@
 NAME	= libfts.a
 
 SRC		= 	ft_isalnum.s ft_isalpha.s ft_isdigit.s ft_isascii.s ft_isprint.s\
-			ft_tolower.s ft_toupper.s
+			ft_tolower.s ft_toupper.s ft_strlen.s
 
 NASM	= ~/.brew/Cellar/nasm/2.11.08/bin/nasm
 
