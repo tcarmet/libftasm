@@ -20,7 +20,7 @@ _ft_isdigit:
 	cmp rdi, 48
 	jl false
 
-	cmp rdi, 57
+	cmp rdi, 58
 	jl true
 
 false:

@@ -6,7 +6,7 @@
 /*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/09 20:29:16 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/05/10 15:09:21 by tcarmet          ###   ########.fr       */
+/*   Updated: 2015/05/10 20:02:11 by tcarmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -202,6 +202,13 @@ void	test_strlen(void)
 	launch_strlen("dhaksdhkjsahdkajsdj", test);
 }
 
+void	test_puts(void)
+{
+	printf("---------- TEST puts ------------\n");
+	ft_puts(0);
+	// puts(0);
+}
+
 int		main(void)
 {
 	test_isalnum();
@@ -212,5 +219,6 @@ int		main(void)
 	test_tolower();
 	test_toupper();
 	test_strlen();
+	test_puts();
 	return (0);
 }
