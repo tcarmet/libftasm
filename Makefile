@@ -6,7 +6,7 @@
 #    By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/05/09 17:27:03 by tcarmet           #+#    #+#              #
-#    Updated: 2015/05/09 22:47:20 by tcarmet          ###   ########.fr        #
+#    Updated: 2015/05/10 23:31:31 by tcarmet          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -17,7 +17,8 @@ SRC		= 	ft_isalnum.s ft_isalpha.s ft_isdigit.s ft_isascii.s ft_isprint.s\
 			ft_puts.s
 
 
-NASM	= ~/.brew/Cellar/nasm/2.11.08/bin/nasm
+NASM    = /usr/local/Cellar/nasm/2.11.08/bin/nasm
+#NASM	= ~/.brew/Cellar/nasm/2.11.08/bin/nasm
 
 SRCDIR	= ./srcs/
 

@@ -13,9 +13,10 @@
 ;void ft_puts(char *str)
 ; rax			rdi
 ;		write(int fd, char *str, int len)
-;  rax         rbx         rcx      rdx
+;  rax         rdi         rsi      rdx
 
 %define WRITE 0x2000004
+%define STDOUT 1
 
 section .data
 	_null_str db "(null)", 0
@@ -32,21 +33,19 @@ _ft_puts:
 	je nul
 
 nul:
-	mov rax, WRITE
-	mov rdi, 1
+	mov rdi, STDOUT
 	lea rsi, [rel _null_str]
 	mov rdx, 6
+	mov rax, WRITE
 	;call(0x2000004)
 	syscall
-	jmp bn
 
 bn:
-	push rsi
-	mov rsi, rsp
-	mov rax, WRITE
-	mov rdi, 1
-	mov rsi,
+	push rax
+	mov rsi, 
+	mov rdi, STDOUT
 	mov rdx, 1
+	mov rax, WRITE
 	syscall
-	pop rsi
+	pop rax
 	ret
