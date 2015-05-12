@@ -1,33 +1,30 @@
 ; **************************************************************************** ;
 ;                                                                              ;
 ;                                                         :::      ::::::::    ;
-;    ft_bzero.s                                         :+:      :+:    :+:    ;
+;    ft_memcpy.s                                        :+:      :+:    :+:    ;
 ;                                                     +:+ +:+         +:+      ;
 ;    By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
-;    Created: 2015/05/10 16:18:26 by tcarmet           #+#    #+#              ;
-;    Updated: 2015/05/12 18:07:03 by tcarmet          ###   ########.fr        ;
+;    Created: 2015/05/12 14:10:10 by tcarmet           #+#    #+#              ;
+;    Updated: 2015/05/12 17:11:01 by tcarmet          ###   ########.fr        ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
-;void	bzero(void *s, size_t n);
-; rdi, rsi, rdx
-section .text
-	global _ft_bzero
+;	void	*ft_memcpy(void *dst, const void *src, size_t n)
+;	rax         			rdi         rsi    	 	 rdx
 
-_ft_bzero:
+section .text
+	global _ft_memcpy
+
+_ft_memcpy:
 	mov rax, rdi
-	cmp rdi, 0
-	je finish
+	mov rcx, rdx
+	push rsi
 
 	cmp rsi, 0
 	je finish
-	mov rcx, rsi
 
-boucle:
-	mov byte [rdi], 0
-	inc rdi
-	loop boucle
-
+	rep movsb
 finish:
-	ret 
+	pop rsi
+	ret

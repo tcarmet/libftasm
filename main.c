@@ -6,7 +6,7 @@
 /*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/09 20:29:16 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/05/10 20:02:11 by tcarmet          ###   ########.fr       */
+/*   Updated: 2015/05/12 12:41:28 by tcarmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -206,6 +206,13 @@ void	test_puts(void)
 {
 	printf("---------- TEST puts ------------\n");
 	ft_puts(0);
+	puts(0);
+	ft_puts("lolilol");
+	puts("lolilol");
+	ft_puts("Hello world");
+	puts("Hello world");
+
+
 	// puts(0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/09 17:35:10 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/05/10 19:54:28 by tcarmet          ###   ########.fr       */
+/*   Updated: 2015/05/12 19:00:31 by tcarmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,7 @@ size_t	ft_strlen(char *str);
 void	*ft_memset(void *b, int c, size_t len);
 void	bzero(void *s, size_t n);
 void	ft_puts(char *str);
+void	*ft_memcpy(void *dst, const void *src, size_t n);
+char	*ft_strdup(char *src);
 
 #endif

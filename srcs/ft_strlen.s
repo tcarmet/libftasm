@@ -17,15 +17,12 @@ _ft_strlen:
 	mov rax, 0
 	cmp rdi, 0
 	je finish
-	jmp boucle
-
-
-boucle:
-	cmp byte [rdi], 0
-	je finish
-	inc rax
-	inc rdi
-	jmp boucle
+	mov rcx, -1
+	mov al, 0
+	repnz scasb
+	neg rcx
+	sub rcx, 2
+	mov rax, rcx
 
 finish:
 	ret
