@@ -6,7 +6,7 @@
 /*   By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/09 20:29:16 by tcarmet           #+#    #+#             */
-/*   Updated: 2015/05/12 12:41:28 by tcarmet          ###   ########.fr       */
+/*   Updated: 2015/05/12 20:34:57 by tcarmet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -212,8 +212,31 @@ void	test_puts(void)
 	ft_puts("Hello world");
 	puts("Hello world");
 
+}
+void	launch_strdup(char *str, int test)
+{
+	if (strcmp(ft_strdup(str), strdup(str)) == 0)
+		printf("TEST%d OK\n", test);
+	else
+		printf("TEST%d ERROR\n", test);
+}
 
-	// puts(0);
+void	test_strdup(void)
+{
+	// int 	test;
+
+	// printf("---------- TEST strdup ------------\n");
+	// test = 1;
+	// // launch_strdup("", test);
+	// // test++;
+	// // launch_strdup(NULL, test);
+	// test++;
+	// launch_strdup("lolilol", test);
+	// test++;
+	// launch_strdup("toto", test);
+	// test++;
+	// launch_strdup("hffewlhflejfhslfhldjsfhsldjfhsdljfhsdljfhsdlsdhf", test);
+	printf("yolo %s", ft_strdup("swag"));
 }
 
 int		main(void)
@@ -227,5 +250,6 @@ int		main(void)
 	test_toupper();
 	test_strlen();
 	test_puts();
+	test_strdup();
 	return (0);
 }

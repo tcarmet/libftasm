@@ -1,31 +1,48 @@
 ; **************************************************************************** ;
 ;                                                                              ;
 ;                                                         :::      ::::::::    ;
-;    ft_memcpy.s                                        :+:      :+:    :+:    ;
+;    ft_strcat.s                                        :+:      :+:    :+:    ;
 ;                                                     +:+ +:+         +:+      ;
 ;    By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
-;    Created: 2015/05/12 14:10:10 by tcarmet           #+#    #+#              ;
-;    Updated: 2015/05/12 19:18:52 by tcarmet          ###   ########.fr        ;
+;    Created: 2015/05/12 20:35:29 by tcarmet           #+#    #+#              ;
+;    Updated: 2015/05/12 20:36:13 by tcarmet          ###   ########.fr        ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
-;	void	*ft_memcpy(void *dst, const void *src, size_t n)
-;	rax         			rdi         rsi    	 	 rdx
-
 section .text
-	global _ft_memcpy
+	global _ft_strcat
+	extern _ft_strlen
+	extern _ft_memcpy
 
-_ft_memcpy:
+_ft_strcat:
 	mov rax, rdi
-	mov rcx, rdx
-	push rsi
 
 	cmp rsi, 0
 	je finish
 
-	rep movsb
+	jmp bous1
+
+bous1:
+	cmp [rdi], byte 0
+	je bous2
+
+	inc rdi
+
+	jmp bous1
+
+bous2:
+	cmp [rsi], byte 0
+	je finish
+
+	mov cl, [rsi]
+	mov [rdi], cl
+
+	inc rdi
+	inc rsi
+
+	jmp bous2
 
 finish:
-	pop rsi
+	mov [rdi], byte 0
 	ret
