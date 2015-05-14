@@ -6,7 +6,7 @@
 ;    By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
 ;    Created: 2015/05/10 16:18:26 by tcarmet           #+#    #+#              ;
-;    Updated: 2015/05/12 18:07:03 by tcarmet          ###   ########.fr        ;
+;    Updated: 2015/05/14 17:41:54 by tcarmet          ###   ########.fr        ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
@@ -16,7 +16,6 @@ section .text
 	global _ft_bzero
 
 _ft_bzero:
-	mov rax, rdi
 	cmp rdi, 0
 	je finish
 

@@ -6,7 +6,7 @@
 ;    By: tcarmet <tcarmet@student.42.fr>            +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
 ;    Created: 2015/05/12 20:35:29 by tcarmet           #+#    #+#              ;
-;    Updated: 2015/05/12 20:36:13 by tcarmet          ###   ########.fr        ;
+;    Updated: 2015/05/14 14:16:10 by tcarmet          ###   ########.fr        ;
 ;                                                                              ;
 ; **************************************************************************** ;
 
@@ -21,17 +21,17 @@ _ft_strcat:
 	cmp rsi, 0
 	je finish
 
-	jmp bous1
+	jmp loop_begin
 
-bous1:
+loop_begin:
 	cmp [rdi], byte 0
-	je bous2
+	je loop_end
 
 	inc rdi
 
-	jmp bous1
+	jmp loop_begin
 
-bous2:
+loop_end:
 	cmp [rsi], byte 0
 	je finish
 
@@ -41,7 +41,7 @@ bous2:
 	inc rdi
 	inc rsi
 
-	jmp bous2
+	jmp loop_end
 
 finish:
 	mov [rdi], byte 0
